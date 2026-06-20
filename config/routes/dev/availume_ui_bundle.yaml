@@ -1,0 +1,2 @@
+availume_ui:
+    resource: '@AvailumeUiBundle/config/routes_dev.yaml'

@@ -1,0 +1,98 @@
+# Default navigation used by shared layouts and blocks.
+# Platform apps can replace this file or decorate NavigationProvider to add/remove modules.
+navigation:
+    sidebar:
+        primary:
+            #- { route: user_home, label: Home, icon: 'fa-solid fa-house', section: internal, role: ROLE_USER }
+            #- { route: dashboard, label: Board, icon: 'fa-solid fa-table-columns', section: board, role: ORG_USER, requires_active_organization: true }
+            #- { route: department.home, label: Department, icon: 'fa-solid fa-sitemap', section: department, role: ORG_USER, requires_active_organization: true }
+            #- { route: organization.home, label: Organization, icon: 'fa-regular fa-building', section: organization, role: ORG_DEPARTMENT_MANAGER, requires_active_organization: true }
+            #- { route: search.home, label: Search, icon: 'fa-solid fa-magnifying-glass', section: search, role: ORG_USER, requires_active_organization: true }
+            #- { route: console.home, label: Console, icon: 'fa-solid fa-terminal', section: console, role: ROLE_CONSOLE_ADMIN }
+        sections:
+            internal:
+                #- { route: organization_show, label: Organization, icon: 'fa-regular fa-building', role: ROLE_USER, requires_active_organization: true }
+                #- { route: user_notifications, label: Notifications, icon: 'fa-regular fa-bell', role: ROLE_USER }
+                #- { route: user_feedback, label: Feedback, icon: 'fa-regular fa-message', role: ROLE_USER }
+                #- { route: user.history.home, label: History, icon: 'fa-solid fa-clock-rotate-left', role: ROLE_USER }
+            board:
+                #- { route: board.members.list, label: Members, icon: 'fa-solid fa-users', role: ORG_USER, active_prefix: board.members. }
+                #- { route: board.update, label: 'My Status', icon: 'fa-solid fa-user-check', role: ORG_USER }
+                #- { route: board.history.home, label: History, icon: 'fa-solid fa-clock-rotate-left', role: ORG_USER, active_prefix: board.history. }
+            department:
+                #- { route: department.home, label: Overview, icon: 'fa-solid fa-table-columns', role: ORG_USER }
+                #- { route: department.departments.list, label: Departments, icon: 'fa-solid fa-sitemap', role: ORG_USER, active_prefix: department.departments. }
+                #- { route: department.boards.list, label: Boards, icon: 'fa-solid fa-table-columns', role: ORG_USER, active_prefix: department.boards. }
+            organization:
+                #- { route: organization_show, label: Overview, icon: 'fa-regular fa-building', role: ROLE_USER, requires_active_organization: true }
+                #- { route: organization.departments.list, label: Departments, icon: 'fa-solid fa-sitemap', role: ORG_DEPARTMENT_MANAGER, active_prefix: organization.departments. }
+                #- { route: organization.boards.list, label: Boards, icon: 'fa-solid fa-table-columns', role: ORG_DEPARTMENT_MANAGER, active_prefix: organization.boards. }
+                #- { route: organization.members.list, label: Members, icon: 'fa-solid fa-users', role: ORG_DEPARTMENT_MANAGER, active_prefix: organization.members., active_exclude: organization.members.invite }
+                #- { route: organization.members.invite, label: Invite, icon: 'fa-solid fa-user-plus', role: ORG_ADMIN, active_prefix: organization.members.invite }
+                #- { route: organization.status-reasons.list, label: 'Status Reasons', icon: 'fa-solid fa-list-check', role: ORG_ADMIN, active_prefix: organization.status-reasons. }
+                #- { route: organization.settings.list, label: Settings, icon: 'fa-solid fa-sliders', role: ORG_ADMIN, active_prefix: organization.settings. }
+                #- { route: organization.billing, label: Billing, icon: 'fa-regular fa-credit-card', role: ORG_ADMIN, requires_active_organization: true }
+                #- { route: organization.history.home, label: History, icon: 'fa-solid fa-clock-rotate-left', role: ORG_MANAGER, active_prefix: organization.history. }
+            search:
+                #- { route: search.home, label: Search, icon: 'fa-solid fa-magnifying-glass', role: ORG_USER, requires_active_organization: true }
+            console:
+                #- { route: console.health, label: Health, icon: 'fa-solid fa-heart-pulse', role: ROLE_CONSOLE_ADMIN }
+                #- { route: console.organizations.list, label: Organizations, icon: 'fa-regular fa-building', role: ROLE_CONSOLE_ADMIN }
+                #- { route: console.users.list, label: Users, icon: 'fa-solid fa-users-gear', role: ROLE_CONSOLE_ADMIN }
+                #- { route: console.plans.list, label: Plans, icon: 'fa-regular fa-credit-card', role: ROLE_CONSOLE_ADMIN }
+                #- { route: console.addons.list, label: Add-ons, icon: 'fa-solid fa-puzzle-piece', role: ROLE_CONSOLE_ADMIN }
+                #- { route: console.proposals.list, label: Proposals, icon: 'fa-regular fa-file-lines', role: ROLE_CONSOLE_ADMIN }
+                #- { route: console.feedback.list, label: Feedback, icon: 'fa-regular fa-message', role: ROLE_CONSOLE_ADMIN }
+                #- { route: console.jobs.list, label: 'Command Runs', icon: 'fa-solid fa-list-check', role: ROLE_CONSOLE_ADMIN }
+                #- { route: console.history.home, label: History, icon: 'fa-solid fa-clock-rotate-left', role: ROLE_CONSOLE_ADMIN }
+    public_nav:
+        main:
+            #- { route: home, label: Home }
+            #- { route: public_pricing, label: Pricing }
+            #- { route: help_home, label: Help }
+            #- { route: public_contact, label: Contact }
+        authenticated:
+            #- { route: dashboard, label: Dashboard, class: 'btn btn-sm btn-primary' }
+        guest:
+            #- { route: register, label: Register }
+            #- { route: login, label: 'Sign in', class: 'btn btn-sm btn-primary' }
+    public_footer:
+        product:
+            #- { route: home, label: Home }
+            #- { route: public_pricing, label: Pricing }
+        product_authenticated:
+            #- { route: dashboard, label: Dashboard }
+        product_guest:
+            #- { route: login, label: 'Sign in' }
+        support:
+            #- { route: help_home, label: 'Help center' }
+            #- { route: help.show, label: 'Getting started', parameters: { path: getting-started } }
+            #- { route: help.show, label: 'Roles and permissions', parameters: { path: roles-permissions } }
+        support_authenticated:
+            #- { route: user_feedback, label: Feedback }
+        legal:
+            #- { route: legal_home, label: 'Legal overview' }
+            #- { route: legal.show, label: Privacy, parameters: { path: privacy } }
+            #- { route: legal.show, label: Terms, parameters: { path: terms } }
+            #- { route: legal.show, label: Security, parameters: { path: security } }
+        social:
+            #- { url: 'https://www.linkedin.com/company/inout-board', label: LinkedIn }
+            #- { url: 'https://github.com/inout-board', label: GitHub }
+            #- { url: 'https://x.com/inoutboard', label: X }
+    user_menu:
+        authenticated:
+            #- { route: user_profile, label: Profile }
+            #- { route: user_password, label: Password }
+            #- { route: user_sessions, label: Sessions }
+        notification: { route: user_notifications }
+        logout: { route: logout }
+        login: { route: login }
+    organization_switcher:
+        selected:
+            #- { route: organization_show, label: 'View organization' }
+            #- { route: organization_find, label: 'Find organization' }
+        empty:
+            #- { route: organization_find, label: 'Find organization' }
+        create:
+            #- { route: organization_new, label: 'New organization' }
+        unselect: { route: organization_unselect, role: ROLE_CONSOLE_ADMIN, label: 'Unselect workspace' }
